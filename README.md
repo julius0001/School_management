@@ -46,7 +46,7 @@ School_Management/
   - Responsive grid systems
   - Social media integration
 
-## 📱 Responsive Breakpoints
+## Responsive Breakpoints
 
 - Mobile: up to 480px
 - Tablet: up to 768px
@@ -86,19 +86,19 @@ git clone https://github.com/yourusername/campus-event-management.git
 - Safari (latest)
 - Edge (latest)
 
-## 👥 Contributing
+## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-## ✍️ Author
+## Author
 
 Julius Mt.
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - Font Awesome for icons
 - Google Maps for location integration
