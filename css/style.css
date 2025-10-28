@@ -1,0 +1,599 @@
+/* general reset and body styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: poppins, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+/*color variables*/
+:root {
+    --primary-color: teal;
+    --secondary-color: coral;
+    --text-color: navy;
+    --acent-color: #f0f8ff;
+}
+/* header styling */
+
+/* align socials and navigation as two rows */
+.page-header {
+  display: flex;
+  flex-direction: column; /* stack into two rows */
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* social icons row (first row) */
+.socials {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  order: 1;
+  background-color: var(--acent-color);
+  top: 0;
+  width: 100%;
+  justify-content: center;
+  padding: 0.5rem 0;
+}
+
+/* navigation row (second row) */
+.page-nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  justify-content: space-between; 
+  order: 2;
+  background-color: var(--primary-color);
+  padding: 1rem 2rem;  
+  text-decoration: none;
+}
+
+/* keep logo and menu inline*/
+.page-nav .logo {
+  font-weight: 700;
+  text-decoration: none;
+  margin-right: 1rem;
+}
+
+.page-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  text-decoration: none;
+}
+
+/*hero section styling*/
+.home-intro {
+    background: url("images/hero-bg.jpg") no-repeat center center/cover;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-color);
+    text-align: center;
+    padding: clamp(1rem, 4vw, 2rem);
+    box-sizing: border-box;
+    }
+.hero{
+    background-color: rgba(0, 0, 0, 0.55);
+    padding: clamp(1rem, 3.5vw, 2rem);
+    border-radius: 12px;
+    width: min(100%, 960px);
+    margin: 0 0.5rem;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+}
+.hero h1 {
+    font-size: clamp(0.5rem, 4rem, 2rem);
+    margin-bottom: 0.75rem;
+    line-height: 1.1;
+
+}
+.hero p {
+    font-size: clamp(0-95rem, 3.5vw, 1.2rem);
+    margin-bottom: 1rem;
+    color: whitesmoke;
+}
+
+.btn{
+    display: inline-block;
+    margin-top: 0.75rem;
+    padding: 0.55rem 1.25rem;
+    background-color: var(--secondary-color);
+    color: whitesmoke;
+    text-decoration: none;
+    border-radius: 10px;
+    justify-self: center;
+    font-weight: 600;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.16);
+}
+
+
+/* ====== Events section Styling ====== */
+
+/* keep featured and lists constrained and centered */
+.featured-event,
+.events-list,
+.past-events {
+  max-width: 1200px;
+  margin: 2rem auto;
+  box-sizing: border-box;
+  padding: 0 1rem;
+}
+
+/* Featured area: responsive padding and headline */
+.featured-event {
+  padding: clamp(1.5rem, 3.5vw, 3.5rem);
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(0,128,128,0.06), rgba(255,127,80,0.04));
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+/* responsive centered heading */
+.featured-event h2 {
+  font-size: clamp(1.6rem, 3.2vw, 2.6rem);
+  margin: 0;
+  color: var(--primary-color);
+  text-align: center;
+  line-height: 1.05;
+}
+
+/* Grid for upcoming / past events.
+   Make the section itself a grid, and force the section heading to span both columns. */
+.events-list,
+.past-events {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  align-items: start;
+  padding-top: 1.25rem;
+}
+
+/* make section headings span full width and centered */
+.events-list > h2,
+.past-events > h2 {
+  grid-column: 1 / -1;
+  justify-self: center;
+  text-align: center;
+  font-size: clamp(1.25rem, 2.5vw, 1.8rem);
+  margin: 0 0 0.75rem 0;
+  padding: 0.25rem 0.5rem;
+}
+
+/* event cards occupy normal grid cells */
+.events-list .event-card,
+.past-events .event-card {
+  width: 100%;
+  margin: 0;
+  padding: 1.5rem;
+  border-radius: 14px;
+  box-shadow: 0 14px 36px rgba(0,0,0,0.12);
+  transition: transform .22s ease, box-shadow .22s ease, filter .18s ease;
+}
+/* prominent card inside the section */
+.event-card {
+    background: linear-gradient(135deg, rgba(0,128,128,1), rgba(32,178,170,1));
+    color: whitesmoke;
+    padding: 2rem;
+    border-radius: 12px;
+    margin: 1rem 0;
+    width: min(900px, 95%);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.18);
+    transition: transform .22s ease, box-shadow .22s ease;
+}
+.event-card p {
+    font-size: 1.05rem;
+    margin-bottom: 1rem;
+    opacity: 0.95;
+    text-align: center;
+}
+/* hover micro-interaction to draw attention */
+.event-card:hover {
+    transform: translateY(-8px) scale(1.01);
+    box-shadow: 0 26px 60px rgba(0,0,0,0.24);
+}
+
+/* make the CTA button stand out */
+.event-card .btn {
+    background-color: var(--secondary-color); /* darker accent */
+    color: #fff;
+    padding: 0.65rem 1.6rem;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+    justify-self: center;
+}
+
+
+/* keep h3 readable and responsive inside cards */
+.event-card h3 {
+  font-size: clamp(1.1rem, 2.2vw, 1.9rem);
+  margin-bottom: 0.5rem;
+  color: inherit;
+  text-align: center;
+}
+/* different color styles for upcoming events */
+.events-list .event-card:nth-of-type(odd) {
+  background: linear-gradient(135deg, #ff7f50 0%, #ffb366 100%);
+  color: #1b1b1b;
+}
+.events-list .event-card:nth-of-type(even) {
+  background: linear-gradient(135deg, #48c6ef 0%, #6f86d6 100%);
+  color: #fff;
+}
+
+/* different color styles for past events */
+.past-events .event-card:nth-of-type(odd) {
+  background: linear-gradient(135deg, #9be7a6 0%, #5ac18e 100%);
+  color: #053014;
+}
+.past-events .event-card:nth-of-type(even) {
+  background: linear-gradient(135deg, #ffd6a5 0%, #ff9a9e 100%);
+  color: #3b1f1f;
+}
+
+/* stronger hover */
+.events-list .event-card:hover,
+.past-events .event-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 30px 70px rgba(0,0,0,0.2);
+  filter: saturate(1.05);
+}
+
+/* keep headings readable */
+.event-card h3 { color: inherit; }
+
+
+/* ====== Organizers Section ====== */
+.organizers-section {
+  padding: 2rem;
+  background-color: #fefefe;
+  text-align: center;
+}
+
+.organizers-section h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #004080;
+}
+
+.organizer-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.organizer-card {
+  background-color: #e6f2ff;
+  border-radius: 10px;
+  padding: 1rem;
+  width: 280px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+  text-align: left;
+  transition: transform 22s ease, box-shadow 22s ease;
+}
+.organizer-card:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.24);
+}
+.organizer-card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.organizer-card h3 {
+  color: #003366;
+  margin-bottom: 0.5rem;
+}
+
+.organizer-card p {
+  margin: 0.3rem 0;
+}
+
+.organizer-card a {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: #ff6600;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.organizer-card a:hover {
+  text-decoration: underline;
+}
+
+/* ===== News section (grid, centered, responsive) ===== */
+.news-section {
+  min-height: calc(100vh - var(--header-height) - var(--footer-height));
+  box-sizing: border-box;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background: transparent; /* allow page background to show through */
+}
+
+/* centered, responsive heading */
+.news-section > h2 {
+  text-align: center;
+  margin: 0;
+  color: var(--primary-color);
+  font-size: clamp(1.25rem, 2.6vw, 1.9rem);
+  align-self: center;
+}
+
+/* grid container for the articles (wrap your .news-article elements in .news-grid) */
+.news-section .news-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  flex: 1 1 auto; /* allow grid to expand vertically to fill available space */
+  align-items: start;
+  overflow: auto;
+}
+
+/* article card visuals and responsive behavior */
+.news-article {
+  padding: 1.25rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  background: linear-gradient(135deg, #fff8e6 0%, #ffdca6 100%);
+  color: #1b1b1b;
+}
+
+/* alternate color for even articles */
+.news-section .news-grid .news-article:nth-of-type(even) {
+  background: linear-gradient(135deg, #e8f8ff 0%, #bfe7ff 100%);
+  color: #012a33;
+}
+
+/* responsive images inside articles */
+.news-article img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  display: block;
+}
+
+/* article typography */
+.news-article h3 {
+  font-size: clamp(1.05rem, 2.2vw, 1.4rem);
+  margin: 0;
+  color: var(--primary-color);
+  text-align: center;
+}
+.news-article p { 
+  margin: 0; 
+  color:  var(--text-color);
+  font-size: 0.95rem;
+  line-height: 1.4;
+  text-align: center;
+}
+
+/* bottom area (e.g. CTA or pager) sticks to bottom if added */
+.news-section .news-footer {
+  display: flex;
+  justify-content: center;
+  padding-top: 1rem;
+  align-self: stretch;
+}
+/*===== Contact Section ======*/
+.contact-section {
+    padding: 3rem 1rem;
+    background: linear-gradient(180deg, rgba(240,248,255,0.95), #ffffff);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    color: var(--text-color);
+    align-items: center;
+}
+
+/* heading that sits above the form and map */
+.contact-section h2 {
+    grid-column: 1 / -1;
+    text-align: center;
+    font-size: clamp(1.4rem, 2.6vw, 2rem);
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+/* the form card */
+.contact-section form.contact-form {
+    width: min(600px, 95%);
+    background: #fff;
+    padding: 1.25rem;
+    border-radius: 12px;
+    box-shadow: 0 14px 36px rgba(0,0,0,0.07);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+}
+/* labels and inputs */
+.contact-section label {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #123;
+    display: block;
+    margin-bottom: 0.25rem;
+}
+.contact-section input[type="text"],
+.contact-section input[type="email"],
+.contact-section textarea {
+    width: 100%;
+    padding: 0.75rem 0.9rem;
+    border: 1px solid var(--primary-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    background: #fbfdff;
+    color: #0b2540;
+}
+/* textarea larger */
+.contact-section textarea {
+    min-height: 140px;
+    resize: vertical;
+}
+/* button */
+.contact-section .btn {
+    display: inline-block;
+    padding: 0.8rem 1.2rem;
+    background: var(--secondary-color);
+    color: whitesmoke;
+    border-radius: 10px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    width: min(150px, 100%);
+    justify-self: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+.contact-section .btn:hover { 
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.18);
+}
+.location-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.location-section h2 { 
+    font-size: 1.35rem;
+    margin: 0;
+    color: var(--primary-color);
+    text-align: center;
+}
+.location-section map {
+    padding: 0.75rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    width: min(1000px, 95%);
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* responsive iframe: use aspect-ratio where supported, fallback to fixed height */
+.location-section iframe {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border: none;
+    border-radius: 8px;
+    display: block;
+    aspect-ratio: 16/9;
+    margin: 0;
+}
+
+/*====footer section=====*/
+footer{
+    background-color: var(--primary-color);
+    color: whitesmoke;
+    text-align: center;
+    padding: 1rem;
+}
+
+
+
+
+/* optional: small screens keep the same stacking but reduce gaps */
+@media (max-width: 480px) {
+  .page-header { gap: 0.25rem; padding: 0.4rem; }
+  .page-nav ul { gap: 0.6rem; flex-wrap: wrap; justify-content: center; }
+
+}
+
+/* Small-screen tweaks */
+@media (max-width: 600px) {
+    .home-intro {
+        min-height: 50vh;
+        padding: 1rem;
+        background-position: center 35%; /* shift focal point for small screens */
+    }
+    .hero {
+        padding: 0.9rem 1rem;
+        border-radius: 10px;
+        width: 100%;
+    }
+    .btn {
+        width: 50%;
+        padding: 0.75rem;
+    }
+}
+@media (max-width: 600px) {
+  .featured-event {
+    padding: 1rem;
+  }
+  .featured-event h2 {
+    font-size: clamp(1.3rem, 4vw, 2.2rem);
+  }
+@media (max-width: 900px) {
+  .events-list,
+  .past-events {
+    grid-template-columns: 1fr;
+    padding: 0 1rem 1rem 1rem;
+  }
+  .events-list > h2,
+  .past-events > h2 {
+    font-size: clamp(1.1rem, 3.5vw, 1.6rem);
+  }
+}
+@media (max-width: 768px) {
+  .organizer-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media (max-width: 900px) {
+    .contact-section .contact-wrap {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    .contact-section .btn {
+        justify-self: center;
+        width: 100%;
+    }
+    .location-section h2 { text-align: center; }
+}
+
+    @media (max-width: 600px) {
+        .location-section iframe {
+            height: 250px;
+        }
+    }
+
+    @media (max-width: 900px) {
+  .news-section {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .news-section > h2 {
+    font-size: clamp(1.1rem, 4vw, 1.6rem);
+  }
+}
+@media (max-width: 900px) {
+  .news-section {
+    min-height: calc(100vh - 180px); /* increase header footprint on small screens if needed */
+  }
+  .news-section .news-grid {
+    grid-template-columns: 1fr;
+  }
+}
+  .news-section {
+    padding: 1.25rem;
+  }
+}
